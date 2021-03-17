@@ -1,34 +1,19 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package osvita
- */
-
-?>
-
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'osvita' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'osvita' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'osvita' ), 'osvita', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
-
-<?php wp_footer(); ?>
-
+<footer class="footer">
+	<div class="container footer__container">
+		<a class="logo footer__logo">
+			<img src="img/logo.svg" alt="Логотип Блога">
+		</a>
+		<nav class="nav footer__nav">
+			<ul class="nav__list list-reset">
+				<li class="nav__item"><a class="nav__link nav__link--current">Главная</a></li>
+				<li class="nav__item"><a href="#" class="nav__link">О нас</a></li>
+				<li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
+				<li class="nav__item"><a href="#" class="nav__link search-link">Поиск</a></li>
+			</ul>
+		</nav>
+		<small class="footer__copy">ООО “Организация” 2020. Все права защищены</small>
+	</div>
+</footer>
+<?php wp_footer();?>
 </body>
 </html>
