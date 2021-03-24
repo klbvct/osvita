@@ -1,7 +1,7 @@
 <footer class="footer">
 	<div class="container footer__container">
 		<a class="logo footer__logo">
-			<img src="img/logo.svg" alt="Логотип Блога">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Логотип Блога">
 		</a>
 		<nav class="nav footer__nav">
 			<ul class="nav__list list-reset">
