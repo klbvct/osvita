@@ -13,7 +13,7 @@
 	<header class="header">
 		<div class="container header__container">
 			<a class="logo header__logo">
-				<img src="img/logo.svg" alt="Логотип Блога">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Логотип Блога">
 			</a>
 			<div class="header__right">
 				<nav class="nav header__nav">

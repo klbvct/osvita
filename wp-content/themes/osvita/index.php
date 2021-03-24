@@ -25,131 +25,46 @@
 					<time class="blog-post__date">13 дек 2020</time>
 				</article>
 				<ul class="post-grid list-reset">
-					<li class="post-grid__item">
-						<article class="blog-post">
-							<a href="" class="blog-post__category">Категория 1</a>
-							<h3 class="blog-post__title blog-title">
-								<a href="#" class="blog-post__link">
-									Управление ИТ-активами – скучная рутина или творческая задача?
-								</a>
-							</h3>
-							<p class="blog-post__descr">
-								Размышляя об управлении ИТ-активами, я вспомнил один учебный пример. Менеджер по ИТ-мощностям в крупной
-								компании
-								периодически готовил толстенный отчёт руководству. В очередной раз он не принёс отчёт, решив проверить, нужен
-								ли
-								он вообще.
-							</p>
-							<time class="blog-post__date">13 дек 2020</time>
-						</article>
-					</li>
-					<li class="post-grid__item">
-						<article class="blog-post">
-							<a href="" class="blog-post__category">Категория 1</a>
-							<h3 class="blog-post__title blog-title">
-								<a href="#" class="blog-post__link">
-									ITAM&SAMDay – самая настоящая удача!
-								</a>
-							</h3>
-							<time class="blog-post__date">13 дек 2020</time>
-						</article>
-					</li>
-					<li class="post-grid__item">
-						<article class="blog-post" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/post-bg.jpg');">
-							<a href="" class="blog-post__category">Очень длинная категория 2</a>
-							<h3 class="blog-post__title blog-title">
-								<a href="#" class="blog-post__link">
-									Управление ИТ-активами – скучная рутина или творческая задача?
-								</a>
-							</h3>
-							<time class="blog-post__date">13 дек 2020</time>
-						</article>
-					</li>
-					<li class="post-grid__item">
-						<article class="blog-post" style="background-image: url('');">
-							<a href="" class="blog-post__category">Категория 1</a>
-							<h3 class="blog-post__title blog-title">
-								<a href="#" class="blog-post__link">
-									Управление ИТ-активами – скучная рутина или творческая задача слово слово и еще длинное слово после чего ...
-								</a>
-							</h3>
-							<time class="blog-post__date">13 дек 2020</time>
-						</article>
-					</li>
-					<li class="post-grid__item">
-						<article class="blog-post" style="background-image: url('');">
-							<a href="" class="blog-post__category">Категория 1</a>
-							<h3 class="blog-post__title blog-title">
-								<a href="#" class="blog-post__link">
-									ITAM&SAMDay – самая настоящая удача!
-								</a>
-							</h3>
-							<time class="blog-post__date">13 дек 2020</time>
-						</article>
-					</li>
-					<li class="post-grid__item">
-						<article class="blog-post">
-							<a href="" class="blog-post__category">Категория 1</a>
-							<h3 class="blog-post__title blog-title">
-								<a href="#" class="blog-post__link">
-									Управление ИТ-активами – скучная рутина или творческая задача?
-								</a>
-							</h3>
-							<p class="blog-post__descr">
-								Размышляя об управлении ИТ-активами, я вспомнил один учебный пример. Менеджер по ИТ-мощностям в крупной
-								компании
-								периодически готовил толстенный отчёт руководству. В очередной раз он не принёс отчёт, решив проверить,
-								нужен
-								ли
-								он вообще.
-							</p>
-							<time class="blog-post__date">13 дек 2020</time>
-						</article>
-					</li>
-					<li class="post-grid__item">
-						<article class="blog-post">
-							<a href="" class="blog-post__category">Категория 1</a>
-							<h3 class="blog-post__title blog-title">
-								<a href="#" class="blog-post__link">
-									ITAM&SAMDay – самая настоящая удача!
-								</a>
-							</h3>
-							<time class="blog-post__date">13 дек 2020</time>
-						</article>
-					</li>
-					<li class="post-grid__item">
-						<article class="blog-post" style="background-image: url('');">
-							<a href="" class="blog-post__category">Категория 1</a>
-							<h3 class="blog-post__title blog-title">
-								<a href="#" class="blog-post__link">
-									ITAM&SAMDay – самая настоящая удача!
-								</a>
-							</h3>
-							<time class="blog-post__date">13 дек 2020</time>
-						</article>
-					</li>
-					<li class="post-grid__item">
-						<article class="blog-post" style="background-image: url('');">
-							<a href="" class="blog-post__category">Категория 1</a>
-							<h3 class="blog-post__title blog-title">
-								<a href="#" class="blog-post__link">
-									ITAM&SAMDay – самая настоящая удача!
-								</a>
-							</h3>
-							<time class="blog-post__date">13 дек 2020</time>
-						</article>
-					</li>
-					<li class="post-grid__item">
-						<article class="blog-post" style="background-image: url('');">
-							<a href="" class="blog-post__category">Категория 1</a>
-							<h3 class="blog-post__title blog-title">
-								<a href="#" class="blog-post__link">
-									ITAM&SAMDay – самая настоящая удача!
-								</a>
-							</h3>
-							<time class="blog-post__date">13 дек 2020</time>
-						</article>
-					</li>
+					<?php
+						// проверяем есть ли посты в глобальном запросе - переменная $wp_query
+						if( have_posts() ){
+							// перебираем все имеющиеся посты и выводим их
+							while( have_posts() ){
+								the_post();
+								?>
+
+									<li class="post-grid__item">
+										<article class="blog-post">
+											<?php
+												$category = get_the_category();													
+												$cat_link = get_category_link( $category[0] );
+											?>
+											<a href="<?php echo $cat_link; ?>" class="blog-post__category">
+												<?php echo $category[0]->cat_name; ?> 
+											</a>
+											<h3 class="blog-post__title blog-title">
+												<a href="<?php echo get_the_permalink(); ?>" class="blog-post__link">
+													<?php the_title(); ?>
+												</a>
+											</h3>
+											<p class="blog-post__descr">
+												<?php echo get_the_excerpt(); ?>
+											</p>
+											<time class="blog-post__date">
+												<?php the_date(' j F Y '); ?>
+											</time>
+										</article>
+									</li>
+
+								<?php
+							}
+							
+						}
+						// постов нет
+						else {
+							echo "<h2>Записей нет.</h2>";
+						}
+					?>
 				</ul>
 				<ul class="pagination list-reset">
 					<li class="pagination__item">
