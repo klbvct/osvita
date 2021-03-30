@@ -587,7 +587,7 @@ body {
 	font-size: 18px;
 	font-weight: 500;
 	color: var(--accent-color);
-	background-image: url("./img/phone.svg");
+	background-image: url(./img/phone.svg);
 	background-position: left center;
 	background-repeat: no-repeat;
 	padding-left: 24px;
@@ -1272,7 +1272,7 @@ body {
 }
 
 /*--------------------------------------------------------------
-# Contact
+# Contacts
 --------------------------------------------------------------*/
 
 .contacts {
@@ -1323,7 +1323,7 @@ body {
 	line-height: 23px;
 	padding-left: 25px;
 	color: var(--accent-color);
-	background-image: url("../img/pin.svg");
+	background-image: url(./img/pin.svg);
 	background-position: left center;
 	background-repeat: no-repeat;
 }
@@ -1347,19 +1347,19 @@ body {
 }
 
 .social__link--fb {
-	background-image: url('../img/fb.svg');
+	background-image: url(./img/fb.svg);
 }
 
 .social__link--vk {
-	background-image: url('../img/vk.svg');
+	background-image: url(./img/vk.svg);
 }
 
 .social__link--insta {
-	background-image: url('../img/insta.svg');
+	background-image: url(./img/insta.svg);
 }
 
 .social__link--tw {
-	background-image: url('../img/tw.svg');
+	background-image: url(./img/tw.svg);
 }
 
 .callback-form__input {

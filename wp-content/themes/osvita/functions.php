@@ -237,5 +237,31 @@ function posts_link_prev_class($format) {
 add_filter('previous_post_link', 'posts_link_prev_class');
 
 /**
- * Выводим меню.
+ * Подключаем форму.
  */
+
+add_action( 'wp_ajax_callback_mail', 'callback_mail' );
+add_action( 'wp_ajax_nopriv_callback_mail', 'callback_mail' );
+
+function callback_mail() {
+	$name = $POST['name'];
+	$phone = $POST['tel'];
+	$msg = $POST['msg'];
+
+	$to = 'kalabukhov87@gmail.com';
+	$subject = 'asd';
+	$massege = 'asd' . $name . $phone . $msg;
+
+	remove_all_filters( 'wp_mail_from' );
+	remove_all_filters( 'wp_mail_from_name' );
+
+	$headers = array(
+		'From: Me Myself <me@examplr.net>',
+		'content-type: text/html',
+		'Cc: John Q Codex <jqc@wordpress.org>',
+		'Cc: ilovwp@wordpress.org',
+	);
+
+	wp_mail( $to, $subject, $massege, $headers );
+	wp_die();
+}

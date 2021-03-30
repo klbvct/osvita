@@ -8,3 +8,29 @@ searchLink.addEventListener('click', () => {
 searchClose.addEventListener('click', () => {
     searchBlock.style.display = 'none';
 });
+
+// Форма отбратной связи
+document.querySelector('.callback-form').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    let action = e.currentTarget.getAttribute('action');
+    let th = e.currentTarget;
+    let form = th;
+
+    let formData = new FormData(form);
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                console.log('Отправлено');
+            }
+        }
+    }
+
+    xhr.open('POST', action, true);
+    xhr.send(formData);
+
+    form.reset();
+});
