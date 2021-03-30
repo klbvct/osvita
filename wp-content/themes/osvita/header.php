@@ -12,18 +12,24 @@
 <body>
 	<header class="header">
 		<div class="container header__container">
-			<a href="
-				<?php
-					if( is_front_page() ){
-						echo '';
-					}
-					else {
-						echo home_url();
-					}
-				?>
-			" class="logo header__logo">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Логотип Блога">
-			</a>
+
+			<?php
+				if( is_front_page() ){
+			?>
+				<a class="logo header__logo">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Логотип Блога">
+				</a>
+			<?php
+				}
+				else {
+			?>
+				<a href="<?php echo home_url(); ?>" class="logo header__logo">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Логотип Блога">
+				</a>
+			<?php
+				} 
+			?>
+
 			<div class="header__right">
 				<nav class="nav header__nav">
 					<ul class="nav__list list-reset">

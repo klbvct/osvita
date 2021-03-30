@@ -48,66 +48,36 @@
 				?>	
 
 				<ul class="post-grid list-reset">
-					 
-				<?php
-					$args = [
-						'orderby' => 'rand',
-						'posts_per_page' => '6',
-						'offset' => '1',
-					];
-
-					$query = new WP_Query( $args ); ?>
-
-					<?php if ( $query->have_posts() ) : ?>
-
-						<!-- пагинация -->
-
-						<!-- цикл -->
-						<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-							<li class="post-grid__item">
-								<article class="blog-post">
-									<?php
-										$category = get_the_category();													
-										$cat_link = get_category_link( $category[0] );
-									?>
-									<a href="<?php echo $cat_link; ?>" class="blog-post__category">
-										<?php echo $category[0]->cat_name; ?> 
-									</a>
-									<h3 class="blog-post__title blog-title">
-										<a href="<?php echo get_the_permalink(); ?>" class="blog-post__link">
-											<?php the_title(); ?>
-										</a>
-									</h3>
-									<p class="blog-post__descr"><?php echo get_the_excerpt(); ?></p>
-									<time class="blog-post__date"><?php the_date(' j F Y '); ?></time>
-								</article>
-							</li>
-						<?php endwhile; ?>
-						<!-- конец цикла -->
-
-						<!-- пагинация -->
-
-						<?php wp_reset_postdata(); ?>
-
-					<?php else : ?>
-						<p><?php esc_html_e( 'Нет постов по вашим критериям.' ); ?></p>
-					<?php endif; ?>
 				
+				<?php if ( have_posts() ) { while ( have_posts() ) { the_post(); ?>
+					<!-- Цикл WordPress -->
+					<!-- Вывод постов: the_title() и т.д. -->
+					<li class="post-grid__item">
+						<article class="blog-post">
+							<?php
+								$category = get_the_category();													
+								$cat_link = get_category_link( $category[0] );
+							?>
+							<a href="<?php echo $cat_link; ?>" class="blog-post__category">
+								<?php echo $category[0]->cat_name; ?> 
+							</a>
+							<h3 class="blog-post__title blog-title">
+								<a href="<?php echo get_the_permalink(); ?>" class="blog-post__link">
+									<?php the_title(); ?>
+								</a>
+							</h3>
+							<p class="blog-post__descr"><?php echo get_the_excerpt(); ?></p>
+							<time class="blog-post__date"><?php the_time( ' j F Y ' ); ?></time>
+						</article>
+					</li>
+				<?php } } else { ?>
+					<p>Записей нет.</p>
+				<?php } ?>
+
 				</ul>
-				<ul class="pagination list-reset">
-					<li class="pagination__item">
-						<a class="pagination__link pagination__link--current">1</a>
-					</li>
-					<li class="pagination__item">
-						<a href="#" class="pagination__link">2</a>
-					</li>
-					<li class="pagination__item">
-						<a href="#" class="pagination__link">3</a>
-					</li>
-					<li class="pagination__item">
-						<a href="#" class="pagination__link">4</a>
-					</li>
-				</ul>
+				
+					<?php the_posts_pagination(); ?> 
+				
 			</div>
 			<aside class="sidebar">
 				<div class="popular-posts">

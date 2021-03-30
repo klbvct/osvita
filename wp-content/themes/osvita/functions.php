@@ -182,3 +182,15 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Получает миниатюру поста, которая установлена на странице редактирования записи.
  */
 add_theme_support( 'post-thumbnails' );
+
+/**
+ * Удаляет H2 из шаблона пагинации.
+ */
+add_filter('navigation_markup_template', 'my_navigation_template', 10, 2 );
+function my_navigation_template( $template, $class ){
+	return '
+	<nav class="navigation %1$s" role="navigation">
+		<div class="nav-links">%3$s</div>
+	</nav>    
+	';
+}
