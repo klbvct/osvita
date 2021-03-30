@@ -12,7 +12,16 @@
 <body>
 	<header class="header">
 		<div class="container header__container">
-			<a class="logo header__logo">
+			<a href="
+				<?php
+					if( is_front_page() ){
+						echo '';
+					}
+					else {
+						echo home_url();
+					}
+				?>
+			" class="logo header__logo">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Логотип Блога">
 			</a>
 			<div class="header__right">

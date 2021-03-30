@@ -10,61 +10,89 @@
 		<h1 class="visually-hidden">Статьи нашего блога</h1>
 		<div class="container content__container">
 			<div class="posts">
-				<article class="blog-post blog-post--main">
-					<a href="#cat" class="blog-post__category">Категория 1</a>
-					<h3 class="blog-post__title blog-title">
-						<a href="#link" class="blog-post__link">
-							Управление ИТ-активами – скучная рутина или творческая задача?
-						</a>
-					</h3>
-					<p class="blog-post__descr">
-						Размышляя об управлении ИТ-активами, я вспомнил один учебный пример. Менеджер по ИТ-мощностям в крупной компании
-						периодически готовил толстенный отчёт руководству. В очередной раз он не принёс отчёт, решив проверить, нужен ли
-						он вообще.
-					</p>
-					<time class="blog-post__date">13 дек 2020</time>
-				</article>
+								
+				<?php
+					$result = wp_get_recent_posts( [
+						'numberposts'      => 1,
+						'offset'           => 0,
+						'category'         => 0,
+						'orderby'          => 'post_date',
+						'post_type'        => 'post',
+						'suppress_filters' => true,
+					], OBJECT );
+					foreach( $result as $post ){
+						setup_postdata( $post );?>
+
+						<article class="blog-post blog-post--main">
+							<?php
+								$category = get_the_category();													
+								$cat_link = get_category_link( $category[0] );
+							?>
+							<a href="<?php echo $cat_link; ?>" class="blog-post__category">
+								<?php echo $category[0]->cat_name; ?> 
+							</a>
+							<h3 class="blog-post__title blog-title">
+								<a href="<?php echo get_the_permalink(); ?>" class="blog-post__link">
+									<?php the_title(); ?>
+								</a>
+							</h3>
+							<p class="blog-post__descr">
+								<?php echo get_the_excerpt(); ?>
+							</p>
+							<time class="blog-post__date"><?php the_date(' j F Y '); ?></time>
+						</article>
+
+					<?php 
+					}
+					wp_reset_postdata();
+				?>	
+
 				<ul class="post-grid list-reset">
-					<?php
-						// проверяем есть ли посты в глобальном запросе - переменная $wp_query
-						if( have_posts() ){
-							// перебираем все имеющиеся посты и выводим
-							while( have_posts() ){
-								the_post();
-								?>
+					 
+				<?php
+					$args = [
+						'orderby' => 'rand',
+						'posts_per_page' => '6',
+						'offset' => '1',
+					];
 
-									<li class="post-grid__item">
-										<article class="blog-post">
-											<?php
-												$category = get_the_category();													
-												$cat_link = get_category_link( $category[0] );
-											?>
-											<a href="<?php echo $cat_link; ?>" class="blog-post__category">
-												<?php echo $category[0]->cat_name; ?> 
-											</a>
-											<h3 class="blog-post__title blog-title">
-												<a href="<?php echo get_the_permalink(); ?>" class="blog-post__link">
-													<?php the_title(); ?>
-												</a>
-											</h3>
-											<p class="blog-post__descr">
-												<?php echo get_the_excerpt(); ?>
-											</p>
-											<time class="blog-post__date">
-												<?php the_date(' j F Y '); ?>
-											</time>
-										</article>
-									</li>
+					$query = new WP_Query( $args ); ?>
 
-								<?php
-							}
-							
-						}
-						// постов нет
-						else {
-							echo "<h2>Записей нет.</h2>";
-						}
-					?>
+					<?php if ( $query->have_posts() ) : ?>
+
+						<!-- пагинация -->
+
+						<!-- цикл -->
+						<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+							<li class="post-grid__item">
+								<article class="blog-post">
+									<?php
+										$category = get_the_category();													
+										$cat_link = get_category_link( $category[0] );
+									?>
+									<a href="<?php echo $cat_link; ?>" class="blog-post__category">
+										<?php echo $category[0]->cat_name; ?> 
+									</a>
+									<h3 class="blog-post__title blog-title">
+										<a href="<?php echo get_the_permalink(); ?>" class="blog-post__link">
+											<?php the_title(); ?>
+										</a>
+									</h3>
+									<p class="blog-post__descr"><?php echo get_the_excerpt(); ?></p>
+									<time class="blog-post__date"><?php the_date(' j F Y '); ?></time>
+								</article>
+							</li>
+						<?php endwhile; ?>
+						<!-- конец цикла -->
+
+						<!-- пагинация -->
+
+						<?php wp_reset_postdata(); ?>
+
+					<?php else : ?>
+						<p><?php esc_html_e( 'Нет постов по вашим критериям.' ); ?></p>
+					<?php endif; ?>
+				
 				</ul>
 				<ul class="pagination list-reset">
 					<li class="pagination__item">

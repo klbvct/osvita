@@ -10,6 +10,9 @@
 get_header();
 ?>
 
+<?php
+	while ( have_posts() ) : the_post();
+?>
 <main class="main">
 	<div class="post-banner">
 		<div class="container post-banner__container" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');"></div>
@@ -24,18 +27,11 @@ get_header();
 							$cat_link = get_category_link( $category[0] );
 						?>
 						<a href="<?php echo $cat_link; ?>" class="post-category"><?php echo $category[0]->cat_name; ?></a>
-						<time class="post-date"><?php the_date(' j F Y '); ?></time>
+						<time class="post-date"><?php the_date(); ?></time>
 					</div>
 					<h1 class="blog-title post-title"><?php the_title(); ?></h1>
-					<p>
-					<?php
-						while ( have_posts() ) : the_post();
-
-							the_content();
-						
-						endwhile; // End of the loop.
-						?>
-					</p>
+					
+						<?php the_content(); ?>
 					
 					<img src="<?php echo get_template_directory_uri(); ?>/img/post-img.jpg" alt="">
 				</div>
@@ -129,6 +125,9 @@ get_header();
 		</div>
 	</section>
 </main>	
+<?php	
+	endwhile; // End of the loop.
+?>
 
 <?php
 get_footer();
