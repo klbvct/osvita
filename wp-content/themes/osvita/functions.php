@@ -235,3 +235,7 @@ function posts_link_prev_class($format) {
 	return $format;
 }
 add_filter('previous_post_link', 'posts_link_prev_class');
+
+/**
+ * Выводим меню.
+ */

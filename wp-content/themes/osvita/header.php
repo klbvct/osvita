@@ -31,13 +31,9 @@
 			?>
 
 			<div class="header__right">
-				<nav class="nav header__nav">
-					<ul class="nav__list list-reset">
-						<li class="nav__item"><a class="nav__link nav__link--current">Главная</a></li>
-						<li class="nav__item"><a href="#" class="nav__link">О нас</a></li>
-						<li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
-						<li class="nav__item"><a href="#" class="nav__link search-link">Поиск</a></li>
-					</ul>
+				<nav class="nav menu-nav">
+					<?php wp_nav_menu( ['container' => ''] ); ?>
+					<button class="search-link btn-reset">Поиск</button>
 				</nav>
 				<a href="tel:+798788787" class="phone">+7 (987) 887-87</a>
 			</div>
