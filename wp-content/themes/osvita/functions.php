@@ -220,3 +220,18 @@ function gt_posts_custom_column_views( $column ) {
 }
 add_filter( 'manage_posts_columns', 'gt_posts_column_views' );
 add_action( 'manage_posts_custom_column', 'gt_posts_custom_column_views' );
+
+/**
+ * Предыдущая и следующая новость.
+ */
+function posts_link_next_class($format){
+	$format = str_replace('href=', 'class="post-links__link post-links__link--next" href=', $format);
+	return $format;
+}
+add_filter('next_post_link', 'posts_link_next_class');
+
+function posts_link_prev_class($format) {
+	$format = str_replace('href=', 'class="post-links__link post-links__link--prev" href=', $format);
+	return $format;
+}
+add_filter('previous_post_link', 'posts_link_prev_class');

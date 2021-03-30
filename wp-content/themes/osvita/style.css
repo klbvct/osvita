@@ -1220,12 +1220,18 @@ body {
 	color: var(--accent-color);
 }
 
-.post-links__link--prev svg {
-	margin-right: 7px;
+.post-links__link--prev {
+	background-image: url(../osvita/img/prev.svg);
+	background-repeat: no-repeat;
+	background-position: 16px center;
+	padding-left: 35px;
 }
 
-.post-links__link--next span {
-	margin-right: 7px;
+.post-links__link--next {
+	background-image: url(../osvita/img/next.svg);
+	background-repeat: no-repeat;
+	background-position: calc(100% - 16px) center;
+	padding-right: 35px;
 }
 
 /*--------------------------------------------------------------
