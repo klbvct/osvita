@@ -58,7 +58,7 @@
 				</svg>
 			</button>
 			<form action="#" class="header-search__form">
-				<input type="search" class="header-search__input form-input">
+				<input type="search" name="s" class="header-search__input form-input">
 				<button class="header-search__btn form-btn btn-reset">
 					<span>Найти</span>
 					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
