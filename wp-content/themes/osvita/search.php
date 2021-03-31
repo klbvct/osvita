@@ -15,56 +15,47 @@ get_header();
 			<h1 class="search-blocks__title blog-title">Результаты поиска</h1>
 			<div class="posts">
 				<ul class="post-grid list-reset">
+					
+					<?php if ( have_posts() ) : 
+						/* Start the Loop */
+						while ( have_posts() ) :
+							the_post();
+					?>
+
 					<li class="post-grid__item">
 						<article class="blog-post">
-							<a href="" class="blog-post__category">Категория 1</a>
+							<?php
+								$category = get_the_category();													
+								$cat_link = get_category_link( $category[0] );
+							?>
+							<a href="<?php echo $cat_link; ?>" class="blog-post__category"><?php echo $category[0]->cat_name; ?></a>
 							<h3 class="blog-post__title blog-title">
-								<a href="#" class="blog-post__link">
-									Управление ИТ-активами – скучная рутина или творческая задача?
+								<a href="<?php echo get_the_permalink(); ?>" class="blog-post__link">
+									<?php the_title(); ?>
 								</a>
 							</h3>
 							<p class="blog-post__descr">
-								Размышляя об управлении ИТ-активами, я вспомнил один учебный пример. Менеджер по ИТ-мощностям в крупной
-								компании
-								периодически готовил толстенный отчёт руководству. В очередной раз он не принёс отчёт, решив проверить, нужен
-								ли
-								он вообще.
+								<?php echo get_the_excerpt(); ?>
 							</p>
-							<time class="blog-post__date">13 дек 2020</time>
+							<time class="blog-post__date"><?php the_time( ' j F Y ' ); ?></time>
 						</article>
 					</li>
+					
+					<?php	endwhile; ?>
+
+					<?php else: ?>
+
+						<p>Записей нет.</p>
+
+					<?php endif; ?>
+
 				</ul>
+
+				<?php the_posts_pagination(); ?> 
 			</div>
 		</div>
 	</section>
 </main>
 
-	<main id="primary" class="site-main">
-
-		<?php if ( have_posts() ) : 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-		?>
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
-
-		<?php	endwhile; ?>
-
-			the_posts_navigation();
-
-		<?php else: ?>
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		<?php endif; ?>
-
-	</main><!-- #main -->
-
 <?php
-get_sidebar();
 get_footer();

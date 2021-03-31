@@ -17,7 +17,7 @@
 	</section>
 	<section class="content">
 		<div class="container content__container">
-			<div class="posts blog-post">
+			<div class="home home-content">
 							
 				
 				<ul>
