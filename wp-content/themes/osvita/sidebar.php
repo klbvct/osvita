@@ -30,7 +30,7 @@
 			
 				<li class="popular-posts__item">
 					<article class="blog-post popular-post__article">
-						<h3 class="blog-post__title blog-title">
+						<h3 class="blog-post__title blog-title blog-post__title-sidebar">
 							<a href="<?php echo get_the_permalink(); ?>" class="blog-post__link"><?php the_title(); ?></a>
 						</h3>
 						<time class="blog-post__date"><?php the_time( ' j F Y ' ); ?></time>
