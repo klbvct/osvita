@@ -1039,13 +1039,13 @@ body {
 	}
 
 	.popular-posts__list {
-		display: flex;
+		/* display: flex; */
 		justify-content: space-between;
 	}
 
 	.popular-posts__item {
 		flex-grow: 1;
-		max-width: 30%;
+		/* max-width: 30%; */
 	}
 
 	.popular-post__article {
@@ -1076,10 +1076,18 @@ body {
 	}
 
 	.post-content__container {
-		display: block;
+		display: block !important;
 	}
 
 	.post-wrapper {
+		margin-bottom: 50px;
+	}
+
+	.post-grid {
+		margin-bottom: 50px;
+	}
+
+	.home-content {
 		margin-bottom: 50px;
 	}
 }
@@ -1146,6 +1154,10 @@ body {
 
 	.post-banner__container {
 		border-radius: 0;
+	}
+
+	.post-grid__item:nth-child(5n+1) {
+		min-height: 0;
 	}
 }
 
