@@ -42,6 +42,9 @@ get_header();
 								<?php previous_post_link('%link', 'Предыдущая статья', true); ?>
 								<?php next_post_link('%link', 'Следующая статья', true); ?>
 							</div>
+
+							<?php comments_template(); ?> 
+
 						</div>
 						
 						<?php get_sidebar(); ?>
