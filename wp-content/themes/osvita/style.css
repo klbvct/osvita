@@ -544,6 +544,11 @@ body {
 	align-items: center;
 }
 
+.menu-nav__adaptive {
+	display: none;
+	padding: 1rem 0;
+}
+
 .menu {
 	display: flex;
 	align-items: center;
@@ -1120,6 +1125,10 @@ body {
 
 	.nav {
 		display: none;
+	}
+
+	.menu-nav__adaptive {
+		display: block;
 	}
 
 	.sub-form {
