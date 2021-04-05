@@ -3,11 +3,11 @@
 <main class="main">
 	<section class="banner">
 		<div class="container">
-			<img src="<?php echo get_template_directory_uri(); ?>/img/banner.jpg" alt="">
+			<h1 class="category-banner__title">Статьи нашего блога</h1>
 		</div>
 	</section>
 	<section class="content">
-		<h1 class="visually-hidden">Статьи нашего блога</h1>
+
 		<div class="container content__container">
 			<div class="posts">
 				<ul class="post-grid list-reset">

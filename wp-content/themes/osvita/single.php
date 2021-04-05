@@ -28,7 +28,7 @@ get_header();
 							<ul class="network-list list-reset">
 								<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/fb.svg" alt=""></a></li>
 								<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/insta.svg" alt=""></a></li>
-								<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tw.svg" alt=""></a></li>
+								<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tg.svg" alt=""></a></li>
 							</ul>
 						</div>
 						<div class="post-title__content">

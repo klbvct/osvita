@@ -602,16 +602,12 @@ body {
 	padding-left: 24px;
 }
 
-/*.banner {
-	height: 300px;
-	background-image: url("./img/banner.jpg");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}*/
-
-.banner-img {
-	
+.banner {
+	height: 180px;
+    background-color: #f1f2f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .content {
@@ -1221,6 +1217,10 @@ body {
 
 .network-list > li	{
 	margin-bottom: 10px;
+}
+
+.network-list img {
+	max-width: 40px;
 }
 
 .post-title__content {
