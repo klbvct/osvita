@@ -18,23 +18,35 @@ get_header();
 			the_post();
 ?>			
 			<main class="main">
+			<?php
+				$category = get_the_category();													
+				$cat_link = get_category_link( $category[0] );
+			?>
 				<div class="post-banner">
-					<div class="container post-banner__container" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');"></div>
+					<div class="container post-banner__container">
+						<div class="network">
+							<ul class="network-list list-reset">
+								<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/fb.svg" alt=""></a></li>
+								<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/insta.svg" alt=""></a></li>
+								<li><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/tw.svg" alt=""></a></li>
+							</ul>
+						</div>
+						<div class="post-title__content">
+							<a href="<?php echo $cat_link; ?>" class="post-category__title"><?php echo $category[0]->cat_name; ?></a>
+							<h1 class="blog-title post-title"><?php the_title(); ?></h1>
+							<time class="post-date"><?php the_time( ' j F Y ' ); ?></time>
+						</div>
+						<div class="author">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/no-img.png" alt="" class="author author-img">
+							<p class="author author-name">Марьяна Калабухова</p>
+						</div>
+					</div>
 				</div>
 				<section class="post-content">
 					<div class="container post-content__container">
 						<div class="post-wrapper">
 							<div class="post">
-								<div class="post-meta">
-									<?php
-										$category = get_the_category();													
-										$cat_link = get_category_link( $category[0] );
-									?>
-									<a href="<?php echo $cat_link; ?>" class="post-category"><?php echo $category[0]->cat_name; ?></a>
-									<time class="post-date"><?php the_time( ' j F Y ' ); ?></time>
-								</div>
-								<h1 class="blog-title post-title"><?php the_title(); ?></h1>
-								
+																
 								<?php the_content(); ?>
 								
 							</div>

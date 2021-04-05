@@ -1162,8 +1162,21 @@ body {
 		margin-bottom: 20px;
 	}
 
+	.post-banner {
+		padding: 60px 0 !important;
+	}
+
+	.network {
+		display: none;
+	}
+
+	.author {
+		margin-top: 20px;
+	}
+
 	.post-banner__container {
 		border-radius: 0;
+		display: block !important;
 	}
 
 	.post-grid__item:nth-child(5n+1) {
@@ -1191,18 +1204,45 @@ body {
 # Post
 --------------------------------------------------------------*/
 .post-banner {
-	padding: var(--grid-gap) 0;
+	padding: 80px 0;
+	margin-bottom: 40px;
+	background-color: #f1f2f8;
 }
 
 .post-banner__container {
-	height: 300px;
-	border-radius: 20px;
 	overflow: hidden;
-	padding: 0;
-	max-width: 1400px;
+	max-width: 1430px;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+}
+
+.network-list > li	{
+	margin-bottom: 10px;
+}
+
+.post-title__content {
+	grid-column: 8 span;
+}
+
+.post-category__title {
+	font-size: 16px;
+    color: var(--accent-color);
+}
+
+.author {
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+	grid-column: 2 span;
+}
+
+.author-img {
+	max-width: 80px;
+	border-radius: 50%;
 }
 
 .post-content {
@@ -1248,10 +1288,10 @@ body {
 }
 
 .post-title {
-	margin-bottom: 30px;
-	font-size: 30px;
-	line-height: 38px;
-	color: #000;
+	margin: 35px 0;
+    font-size: 40px;
+    line-height: 50px;
+    color: #000;
 }
 
 .post p {
