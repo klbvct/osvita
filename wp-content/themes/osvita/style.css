@@ -1319,7 +1319,7 @@ body {
 
 .post p {
 	margin: 0;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	font-size: 18px;
 	line-height: 27px;
 	color: var(--dark-color);
@@ -1648,4 +1648,25 @@ p.home-banner__bold {
     background-repeat: no-repeat;
     background-position: center;
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.home-content p {
+	margin: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 27px;
+    color: var(--dark-color);
+}
+
+.home-content h2:not(:first-child) {
+	margin-top: 2rem;
+}
+
+.home-content h2 {
+	font-weight: 500;
+}
+
+.home-content h3 {
+	font-weight: 500;
+	margin-bottom: 5px;
 }
