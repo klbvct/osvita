@@ -35,10 +35,8 @@
 					<?php wp_nav_menu( ['container' => ''] ); ?>
 					<button class="search-link btn-reset">Поиск</button>
 				</nav>
-				<a href="tel:+798788787" class="phone">+7 (987) 887-87</a>
-				
+				<!-- <a href="tel:+798788787" class="phone">+7 (987) 887-87</a> -->
 			</div>
-			
 		</div>
 		<div class="container header__container">
 			<div class="menu-nav__adaptive">

@@ -37,8 +37,9 @@ get_header();
 							<time class="post-date"><?php the_time( ' j F Y ' ); ?></time>
 						</div>
 						<div class="author">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/no-img.png" alt="" class="author author-img">
-							<p class="author author-name">Марьяна Калабухова</p>
+							<img src="<?php echo get_template_directory_uri(); ?>/img/marianna.svg" alt="" class="home-banner__img">
+							<p class="home-banner__bold">Марьяна Калабухова </p>
+							<p>Консультант по обучению, PhD</p>
 						</div>
 					</div>
 				</div>

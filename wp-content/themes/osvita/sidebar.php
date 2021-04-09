@@ -8,10 +8,12 @@
  */
 ?>
 <aside class="sidebar">
-	<ul>
-		<?php wp_list_categories('title_li='); ?>
-	</ul>
-				
+	<div class="sidebar-category">
+		<h3 class="popular-posts__title blog-title">Категории</h3>
+		<ul class="list-reset">
+			<?php wp_list_categories('title_li='); ?>
+		</ul>
+	</div>	
 	<div class="popular-posts">
 		<h3 class="popular-posts__title blog-title">Популярные новости</h3>
 		<ul class="popular-posts__list list-reset">
