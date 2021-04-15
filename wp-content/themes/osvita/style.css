@@ -1277,7 +1277,7 @@ body {
 
 .post-title__content {
 	grid-column: 8 span;
-	width: 700px;
+	max-width: 700px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -1506,6 +1506,10 @@ body {
 	align-items: center;
 }
 
+.social__justy-center {
+	justify-content: center;
+}
+
 .social__item:not(:last-child) {
 	margin-right: 20px;
 }
@@ -1532,7 +1536,7 @@ body {
 }
 
 .social__link--tw {
-	background-image: url(./img/tw.svg);
+	background-image: url(./img/tg.svg);
 }
 
 .callback-form__input {

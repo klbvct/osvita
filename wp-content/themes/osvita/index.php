@@ -24,11 +24,11 @@
 							<a href="<?php echo $cat_link; ?>" class="blog-post__category">
 								<?php echo $category[0]->cat_name; ?> 
 							</a>
-							<h3 class="blog-post__title blog-title">
+							<h2 class="blog-post__title blog-title">
 								<a href="<?php echo get_the_permalink(); ?>" class="blog-post__link">
 									<?php the_title(); ?>
 								</a>
-							</h3>
+							</h2>
 							<p class="blog-post__descr"><?php echo get_the_excerpt(); ?></p>
 							<time class="blog-post__date"><?php the_time( ' j F Y ' ); ?></time>
 						</article>

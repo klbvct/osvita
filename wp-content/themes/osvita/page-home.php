@@ -19,7 +19,7 @@
 				<p class="home-banner__desc">Обучение больше не линейно. Оно фрагментарно и во времени, и в пространстве. Мы больше не можем выбрать одну профессию на всю жизнь, но можем «собрать» свое образование из множества "пазлов". Создать свой собственный образовательный дизайн, сформировать свою уникальную модель обучения, развития и карьеры!</p>
 			</div>
 			<div class="home-banner-img">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/marianna.svg" alt="" class="home-banner__img">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/marianna.svg" alt="Дизайн образование - Профориентация - Education Design" class="home-banner__img">
 				<p class="home-banner__bold">Марьяна Калабухова </p>
 				<p>Автор проекта Дизайн Образования,<br>консультант по обучению, PhD</p>
 			</div>

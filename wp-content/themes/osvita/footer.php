@@ -6,7 +6,7 @@
 		<nav class="nav menu-nav">
 			<?php wp_nav_menu( ['container' => ''] ); ?>
 		</nav>
-		<small class="footer__copy">ООО “Организация” 2020. Все права защищены</small>
+		<small class="footer__copy">&copy; Все права защищены ООО "ОТЦ "Европа"</small>
 	</div>
 </footer>
 <?php wp_footer();?>
